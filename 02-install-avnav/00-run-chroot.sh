@@ -12,4 +12,4 @@ else
 	apt install -y /tmp/avnav.deb
 	apt install -y /tmp/avnav-raspi.deb
 fi
-apt install -y --no-install-recommends avnav-oesenc avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin
+apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin
