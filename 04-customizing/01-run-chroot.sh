@@ -7,18 +7,23 @@ cp /usr/lib/avnav/raspberry/avnav_server.xml $dd
 if [ -f /etc/systemd/system/signalk.service ] ; then
 	sed -iorig '/##.*SIGNALK/d' $dd/avnav_server.xml
 fi
-if [ -f /etc/default/n2kd ] ; then
-	sed -iorig 's/^ *# *CAN_INTERFACE *=.*/CAN_INTERFACE=can0/' /etc/default/n2kd
+N2KCFG=/etc/default/n2kd 
+if [ -f $N2KCFG ] ; then
+	echo 'INTERFACE_DEVICE=can0' >> $N2KCFG
+	echo 'INTERFACE_PROGRAM=candump' >> $N2KCFG
+	echo 'INTERFACE_OPTIONS=" | candump2analyze"' >> $N2KCFG
 	sed -iorig '/##.*CANBOAT/d' $dd/avnav_server.xml
 fi
 DEMOCHART="osm-online.xml"
 demosrc=/usr/lib/avnav/viewer/demo/$DEMOCHART
 if [ -f $demosrc ] ; then
   dst=$dd/charts
-  if [ -d $dst ] ; then
+  if [ ! -d $dst ] ; then
     mkdir -p $dst
   fi
-  cp $demosrc $dst
+  if [ -d $dst ] ; then
+    cp $demosrc $dst
+  fi
 fi
 chown -R pi:pi /home/pi/avnav
 
