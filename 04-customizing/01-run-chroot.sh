@@ -11,7 +11,7 @@ N2KCFG=/etc/default/n2kd
 if [ -f $N2KCFG ] ; then
 	echo 'INTERFACE_DEVICE=can0' >> $N2KCFG
 	echo 'INTERFACE_PROGRAM=candump' >> $N2KCFG
-	echo 'INTERFACE_OPTIONS=" | candump2analyze"' >> $N2KCFG
+	echo 'INTERFACE_OPTIONS=" | candump2analyzer"' >> $N2KCFG
 	sed -iorig '/##.*CANBOAT/d' $dd/avnav_server.xml
 fi
 DEMOCHART="osm-online.xml"
