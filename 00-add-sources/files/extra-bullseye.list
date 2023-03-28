@@ -1,2 +1,2 @@
-deb [signed-by=/usr/share/keyrings/oss.boating.gpg] https://www.free-x.de/debpreview RELEASE main contrib non-free
+#deb [signed-by=/usr/share/keyrings/oss.boating.gpg] https://www.free-x.de/debpreview RELEASE main contrib non-free
 deb [signed-by=/usr/share/keyrings/oss.boating.gpg] https://www.free-x.de/debian RELEASE main contrib non-free
