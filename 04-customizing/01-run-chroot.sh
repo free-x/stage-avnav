@@ -28,3 +28,8 @@ if [ -f $demosrc ] ; then
 fi
 chown -R pi:pi /home/pi/avnav
 
+if [ "$(dpkg --print-architecture) == "armhf" ]
+then 
+  echo "arm_64bit=0" >> /boot/config.txt
+  sed -i "s/arm_64bit=1/arm_64bit=0/g" /boot/config.txt
+fi

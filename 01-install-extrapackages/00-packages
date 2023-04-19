@@ -20,3 +20,4 @@ ntpdate
 rdate
 i2c-tools
 iptables
+raspberrypi-kernel-headers
