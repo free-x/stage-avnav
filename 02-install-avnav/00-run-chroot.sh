@@ -12,7 +12,7 @@ else
 	apt install -y /tmp/avnav.deb
 	apt install -y /tmp/avnav-raspi.deb
 fi
-apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin avnav-driver-plugin
+apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin avnav-raspi-driver
 if [ "$EXTRA_PACKAGES" != "" ] ; then
 	echo "$EXTRA_PACKAGES" | tr ',' '\012' | while read pkg
 	do
