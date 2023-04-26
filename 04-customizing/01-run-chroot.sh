@@ -6,6 +6,7 @@ if [ -f /etc/systemd/system/signalk.service ] ; then
 fi
 N2KCFG=/etc/default/n2kd 
 if [ -f $N2KCFG ] ; then
+        sed -i -e '/CAN_INTERFACE.*/d' $N2KCFG
 	echo 'INTERFACE_DEVICE=can0' >> $N2KCFG
 	echo 'INTERFACE_PROGRAM=candump' >> $N2KCFG
 	echo 'INTERFACE_OPTIONS=" | candump2analyzer"' >> $N2KCFG
