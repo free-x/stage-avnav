@@ -17,7 +17,7 @@ systemctl disable ntp.service
 if [ "$AVNAV_DAILY" != "1" ] ; then
   apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin 
 else
-  apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-ochartsng-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin
+  apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-ochartsng avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin
 fi
 
 if [ "$EXTRA_PACKAGES" != "" ] ; then
