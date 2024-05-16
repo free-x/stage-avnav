@@ -12,6 +12,10 @@ fi
 
 sed -i "s/RELEASE/${RELEASE}/g" "${ROOTFS_DIR}/etc/apt/sources.list.d/extra.list"
 
+if [ "$AVNAV_DAILY" == "1" ] ; then
+  sed -i "s/#deb/deb/g" "${ROOTFS_DIR}/etc/apt/sources.list.d/extra.list"
+fi
+  
 
 on_chroot << EOF
 apt-get update

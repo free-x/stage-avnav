@@ -3,16 +3,23 @@ systemctl daemon-reload
 systemctl disable hostapd.service
 systemctl disable gpsd.socket gpsd.service
 systemctl disable ntp.service
+#if [ "$AVNAV_DAILY" != "1" ] ; then
+#	apt install -y avnav avnav-raspi 
+#else
+#	base="https://www.wellenvogel.de/software/avnav/downloads/daily/latest"
+#	curl -k -o /tmp/avnav.deb  "$base/avnav_latest_all.deb" || exit 1
+#	curl -k -o /tmp/avnav-raspi.deb "$base/avnav-raspi_latest_all.deb" || exit 1
+#	apt install -y /tmp/avnav.deb
+#	apt install -y /tmp/avnav-raspi.deb
+#fi
+#apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin avnav-raspi-driver
+
 if [ "$AVNAV_DAILY" != "1" ] ; then
-	apt install -y avnav avnav-raspi 
+  apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin 
 else
-	base="https://www.wellenvogel.de/software/avnav/downloads/daily/latest"
-	curl -k -o /tmp/avnav.deb  "$base/avnav_latest_all.deb" || exit 1
-	curl -k -o /tmp/avnav-raspi.deb "$base/avnav-raspi_latest_all.deb" || exit 1
-	apt install -y /tmp/avnav.deb
-	apt install -y /tmp/avnav-raspi.deb
+  apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-ochartsng-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin
 fi
-apt install -y --no-install-recommends avnav-ocharts avnav-ocharts-plugin avnav-history-plugin avnav-update-plugin avnav-mapproxy-plugin avnav-raspi-driver
+
 if [ "$EXTRA_PACKAGES" != "" ] ; then
 	echo "$EXTRA_PACKAGES" | tr ',' '\012' | while read pkg
 	do

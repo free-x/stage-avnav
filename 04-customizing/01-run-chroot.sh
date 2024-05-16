@@ -29,8 +29,19 @@ if [ -f $demosrc ] ; then
 fi
 chown -R pi:pi /home/pi/avnav
 
+if [ $RELEASE == "bookworm" ]
+then
+  mv /boot/avnav.conf /boot/firmware/avnav.conf
+  ln -sf /boot/firmware/avnav.conf /boot/avnav.conf
+fi
+
 if [ "$(dpkg --print-architecture)" == "armhf" ]
 then 
-  echo "arm_64bit=0" >> /boot/config.txt
-  sed -i "s/arm_64bit=1/arm_64bit=0/g" /boot/config.txt
+  echo "arm_64bit=0" >> /boot/firmware/config.txt
+  sed -i "s/arm_64bit=1/arm_64bit=0/g" /boot/firmware/config.txt
+fi
+
+if [ $RELEASE == "bookworm" -a "$(dpkg --print-architecture)" == "arm64" ]
+then
+  echo "kernel=kernel8.img" >> /boot/firmware/config.txt
 fi
