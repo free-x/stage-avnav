@@ -21,3 +21,4 @@ rdate
 i2c-tools
 iptables
 raspberrypi-kernel-headers
+gldriver-test
