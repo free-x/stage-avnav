@@ -20,6 +20,8 @@ ntpdate
 rdate
 i2c-tools
 iptables
-raspberrypi-kernel-headers
 gldriver-test
 ifupdown
+python3-lgpio
+python3-rpi-lgpio
+
