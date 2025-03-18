@@ -43,5 +43,6 @@ fi
 
 if [ $RELEASE == "bookworm" -a "$(dpkg --print-architecture)" == "arm64" ]
 then
+  echo "usb_max_current_enable=1" >> /boot/firmware/config.txt
   echo "kernel=kernel8.img" >> /boot/firmware/config.txt
 fi
