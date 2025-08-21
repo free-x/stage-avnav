@@ -1,0 +1,13 @@
+Types: deb
+URIs: https://www.free-x.de/debian
+Suites: RELEASE
+Arch: ARCH
+Components: main
+Signed-By: /usr/share/keyrings/oss.boating.gpg
+
+#Types: deb
+#URIs: https://www.free-x.de/debpreview
+#Suites: RELEASE
+Arch: ARCH
+#Components: main
+#Signed-By: /usr/share/keyrings/oss.boating.gpg
