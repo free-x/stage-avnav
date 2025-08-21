@@ -15,8 +15,8 @@ bc
 hostapd
 dnsmasq
 mpg123
-ntp
-ntpdate
+ntpsec
+ntpsec-ntpdate
 rdate
 i2c-tools
 iptables
