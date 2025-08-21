@@ -24,4 +24,4 @@ gldriver-test
 ifupdown
 python3-lgpio
 python3-rpi-lgpio
-
+python3-legacy-cgi
