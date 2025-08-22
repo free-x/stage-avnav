@@ -10,6 +10,5 @@ fi
   
 
 on_chroot << EOF
-sed -i "s/ARCH/$(dpkg --print-architecture)/g" /etc/apt/sources.list.d/extra.sources
 apt-get update
 EOF
