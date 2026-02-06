@@ -7,13 +7,9 @@ python3-netifaces
 python3-pil
 python3-smbus
 python3-dbus
-parted
 bc
 mpg123
 ntpsec-ntpdate
 rdate
 i2c-tools
-gldriver-test
-python3-lgpio
-python3-rpi-lgpio
 python3-legacy-cgi
