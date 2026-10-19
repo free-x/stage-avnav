@@ -5,9 +5,3 @@ Suites: RELEASE
 Components: main
 Signed-By: /usr/share/keyrings/oss.boating.gpg
 
-#Types: deb
-#URIs: https://www.free-x.de/debpreview
-#Architectures: ARCH
-#Suites: RELEASE
-#Components: main
-#Signed-By: /usr/share/keyrings/oss.boating.gpg
